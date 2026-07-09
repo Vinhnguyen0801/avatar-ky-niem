@@ -1,71 +1,56 @@
-// ===============================
-// Avatar Builder - Sprint 1
-// ===============================
+// =========================
+// Avatar Builder
+// Version 1.0
+// =========================
 
 const canvas = new fabric.Canvas("canvas", {
+
     preserveObjectStacking: true,
+
     selection: false
+
 });
 
-let userImage = null;
-let frameImage = null;
-
-// Kích thước canvas
 canvas.setWidth(2048);
 canvas.setHeight(2048);
 
-// Màu nền
 canvas.backgroundColor = "#ffffff";
+
 canvas.renderAll();
 
-// ===============================
-// Nạp khung PNG
-// ===============================
+let userImage = null;
 
-fabric.Image.fromURL("assets/frame.png", function(img){
-
-    frameImage = img;
-
-    frameImage.set({
-        left:0,
-        top:0,
-        selectable:false,
-        evented:false
-    });
-
-    frameImage.scaleToWidth(2048);
-    frameImage.scaleToHeight(2048);
-
-    canvas.add(frameImage);
-    frameImage.moveTo(999);
-
-});
-
-// ===============================
-// Upload ảnh
-// ===============================
+// =========================
+// Upload Button
+// =========================
 
 const imageInput = document.getElementById("imageInput");
 
-document.getElementById("btnUpload").onclick = () => {
+const btnUpload = document.getElementById("btnUpload");
+
+btnUpload.onclick = function () {
 
     imageInput.click();
 
 };
 
-imageInput.addEventListener("change", function(e){
+// =========================
+// Upload Image
+// =========================
+
+imageInput.onchange = function (e) {
 
     const file = e.target.files[0];
 
-    if(!file) return;
+    if (!file) return;
 
     const reader = new FileReader();
 
-    reader.onload = function(event){
+    reader.onload = function (event) {
 
-        fabric.Image.fromURL(event.target.result,function(img){
+        fabric.Image.fromURL(event.target.result, function (img) {
 
-            if(userImage){
+            if (userImage) {
 
                 canvas.remove(userImage);
 
@@ -75,31 +60,27 @@ imageInput.addEventListener("change", function(e){
 
             userImage.set({
 
-                left:1024,
+                originX: "center",
 
-                top:1024,
+                originY: "center",
 
-                originX:"center",
+                left: 1024,
 
-                originY:"center",
+                top: 1024,
 
-                cornerColor:"#009640",
+                cornerStyle: "circle",
 
-                cornerStyle:"circle",
+                cornerColor: "#009640",
 
-                transparentCorners:false
+                transparentCorners: false,
+
+                borderColor: "#009640"
 
             });
 
             userImage.scaleToWidth(1200);
 
-            canvas.insertAt(userImage,0);
-
-            if(frameImage){
-
-                frameImage.moveTo(999);
-
-            }
+            canvas.add(userImage);
 
             canvas.setActiveObject(userImage);
 
@@ -111,15 +92,15 @@ imageInput.addEventListener("change", function(e){
 
     reader.readAsDataURL(file);
 
-});
+};
 
-// ===============================
-// Zoom
-// ===============================
+// =========================
+// Zoom +
+// =========================
 
-document.getElementById("btnZoomIn").onclick = function(){
+document.getElementById("btnZoomIn").onclick = function () {
 
-    if(!userImage) return;
+    if (!userImage) return;
 
     userImage.scale(userImage.scaleX * 1.05);
 
@@ -127,9 +108,13 @@ document.getElementById("btnZoomIn").onclick = function(){
 
 };
 
-document.getElementById("btnZoomOut").onclick = function(){
+// =========================
+// Zoom -
+// =========================
 
-    if(!userImage) return;
+document.getElementById("btnZoomOut").onclick = function () {
+
+    if (!userImage) return;
 
     userImage.scale(userImage.scaleX * 0.95);
 
@@ -137,13 +122,13 @@ document.getElementById("btnZoomOut").onclick = function(){
 
 };
 
-// ===============================
-// Rotate
-// ===============================
+// =========================
+// Rotate Left
+// =========================
 
-document.getElementById("btnRotateLeft").onclick = function(){
+document.getElementById("btnRotateLeft").onclick = function () {
 
-    if(!userImage) return;
+    if (!userImage) return;
 
     userImage.rotate(userImage.angle - 5);
 
@@ -151,9 +136,13 @@ document.getElementById("btnRotateLeft").onclick = function(){
 
 };
 
-document.getElementById("btnRotateRight").onclick = function(){
+// =========================
+// Rotate Right
+// =========================
 
-    if(!userImage) return;
+document.getElementById("btnRotateRight").onclick = function () {
+
+    if (!userImage) return;
 
     userImage.rotate(userImage.angle + 5);
 
@@ -161,21 +150,25 @@ document.getElementById("btnRotateRight").onclick = function(){
 
 };
 
-// ===============================
+// =========================
 // Reset
-// ===============================
+// =========================
 
-document.getElementById("btnReset").onclick = function(){
+document.getElementById("btnReset").onclick = function () {
 
-    if(!userImage) return;
+    if (!userImage) return;
 
     userImage.set({
 
-        angle:0,
-        scaleX:1,
-        scaleY:1,
-        left:1024,
-        top:1024
+        left: 1024,
+
+        top: 1024,
+
+        angle: 0,
+
+        scaleX: 1,
+
+        scaleY: 1
 
     });
 
@@ -183,11 +176,19 @@ document.getElementById("btnReset").onclick = function(){
 
 };
 
-// ===============================
-// Download PNG
-// ===============================
+// =========================
+// Download
+// =========================
 
-document.getElementById("btnDownload").onclick = function(){
+document.getElementById("btnDownload").onclick = function () {
+
+    if (!userImage) {
+
+        alert("Hãy chọn ảnh trước.");
+
+        return;
+
+    }
 
     canvas.discardActiveObject();
 
@@ -195,11 +196,14 @@ document.getElementById("btnDownload").onclick = function(){
 
     const link = document.createElement("a");
 
-    link.download = "avatar-ky-niem.png";
+    link.download = "avatar.png";
 
     link.href = canvas.toDataURL({
-        format:"png",
-        quality:1
+
+        format: "png",
+
+        quality: 1
+
     });
 
     link.click();
