@@ -1,159 +1,66 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agribank Avatar Builder</title>
 
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
 
-    <title>Avatar Builder</title>
-
-    <meta name="theme-color"
-          content="#8B0000">
-
-    <link rel="stylesheet"
-          href="css/style.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
 </head>
 
 <body>
 
-<div class="app">
+<div class="container">
 
-    <!-- HEADER -->
+    <header>
 
-    <header class="header">
+        <img src="assets/logo.png" id="logo">
 
-        <img
-            id="logo"
-            src="assets/logo.png"
-            alt="Logo">
+        <h1>AVATAR BUILDER</h1>
 
-        <h1>
-
-            AVATAR BUILDER
-
-        </h1>
-
-        <p>
-
-            Kỷ niệm sự kiện
-
-        </p>
+        <p>Kỷ niệm 8 năm Agribank Hà Tĩnh II</p>
 
     </header>
 
-    <!-- CANVAS -->
+    <div class="canvas-area">
 
-    <section class="workspace">
+        <canvas id="canvas" width="2048" height="2048"></canvas>
 
-        <div class="canvas-wrapper">
+    </div>
 
-            <canvas
-                id="avatarCanvas"
-                width="1080"
-                height="1080">
-            </canvas>
+    <div class="toolbar">
 
-            <div
-                id="dropZone">
+        <button id="uploadBtn">📷 Chọn ảnh</button>
 
-                <div>
+        <button id="zoomInBtn">＋</button>
 
-                    📷
+        <button id="zoomOutBtn">－</button>
 
-                    <br><br>
+        <button id="rotateLeftBtn">↺</button>
 
-                    Kéo ảnh vào đây
+        <button id="rotateRightBtn">↻</button>
 
-                    <br>
+        <button id="resetBtn">♻</button>
 
-                    hoặc
+        <button id="downloadBtn">💾</button>
 
-                    <br><br>
-
-                    bấm
-
-                    <b>Chọn ảnh</b>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- TOOLBAR -->
-
-    <section class="toolbar">
-
-        <button id="btnUpload">
-
-            📷
-
-            <span>
-
-                Chọn ảnh
-
-            </span>
-
-        </button>
-
-        <button id="btnZoomIn">
-
-            ➕
-
-        </button>
-
-        <button id="btnZoomOut">
-
-            ➖
-
-        </button>
-
-        <button id="btnRotateLeft">
-
-            ↺
-
-        </button>
-
-        <button id="btnRotateRight">
-
-            ↻
-
-        </button>
-
-        <button id="btnReset">
-
-            ♻
-
-        </button>
-
-        <button id="btnDownload">
-
-            💾
-
-        </button>
-
-    </section>
+    </div>
 
 </div>
 
 <input
-
 type="file"
-
 id="imageInput"
-
 accept="image/*"
-
 hidden>
 
+<script src="js/canvas.js"></script>
+<script src="js/image.js"></script>
+<script src="js/toolbar.js"></script>
+<script src="js/download.js"></script>
 <script src="js/app.js"></script>
 
 </body>
-
 </html>
