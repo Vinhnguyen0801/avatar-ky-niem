@@ -17,13 +17,13 @@ body{
         Arial,
         sans-serif;
 
-    background:#eef2f7;
+    background:#edf2f7;
 
 }
 
-/* ========= APP ========= */
+/* ========= CONTAINER ========= */
 
-.app{
+.container{
 
     width:100%;
 
@@ -35,7 +35,7 @@ body{
 
     align-items:center;
 
-    padding:40px 20px;
+    padding:30px;
 
 }
 
@@ -49,7 +49,7 @@ body{
 
 }
 
-#logo{
+.logo{
 
     width:90px;
 
@@ -63,41 +63,23 @@ body{
 
 .header h1{
 
-    color:#a40000;
+    color:#a30000;
 
     font-size:34px;
 
-    font-weight:700;
+    margin-bottom:8px;
 
 }
 
 .header p{
 
-    margin-top:8px;
-
     color:#666;
-
-    font-size:16px;
-
-}
-
-/* ========= WORKSPACE ========= */
-
-.workspace{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
 
 }
 
 /* ========= CANVAS ========= */
 
-.canvas-wrapper{
-
-    position:relative;
+.canvas-container{
 
     width:700px;
 
@@ -105,15 +87,13 @@ body{
 
     aspect-ratio:1;
 
-    background:white;
+    background:#ffffff;
 
     border-radius:24px;
 
     overflow:hidden;
 
-    box-shadow:
-
-        0 15px 45px rgba(0,0,0,.15);
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 
 }
 
@@ -129,45 +109,11 @@ canvas{
 
 }
 
-/* ========= DROP ========= */
-
-#dropZone{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    color:#777;
-
-    font-size:22px;
-
-    border:3px dashed #d0d0d0;
-
-    transition:.25s;
-
-    cursor:pointer;
-
-}
-
-#dropZone:hover{
-
-    background:rgba(0,0,0,.03);
-
-}
-
 /* ========= TOOLBAR ========= */
 
-.toolbar{
+footer{
 
-    margin-top:30px;
+    margin-top:25px;
 
     display:flex;
 
@@ -175,45 +121,41 @@ canvas{
 
     justify-content:center;
 
-    gap:15px;
+    gap:12px;
 
 }
 
-.toolbar button{
+button{
 
-    min-width:95px;
+    min-width:90px;
 
-    height:48px;
+    height:46px;
 
     border:none;
 
     border-radius:12px;
 
-    cursor:pointer;
+    background:#009640;
 
-    background:#008f39;
-
-    color:white;
+    color:#fff;
 
     font-size:15px;
 
+    cursor:pointer;
+
     transition:.2s;
 
-    padding:0 16px;
+}
+
+button:hover{
+
+    background:#007733;
 
 }
 
-.toolbar button:hover{
+button:active{
 
-    background:#006f2d;
-
-    transform:translateY(-2px);
-
-}
-
-.toolbar button:active{
-
-    transform:scale(.98);
+    transform:scale(.97);
 
 }
 
@@ -221,31 +163,21 @@ canvas{
 
 @media(max-width:768px){
 
-    .header h1{
+    .canvas-container{
 
-        font-size:28px;
-
-    }
-
-    #dropZone{
-
-        font-size:18px;
-
-        padding:20px;
+        width:100%;
 
     }
 
-    .toolbar{
+    footer{
 
-        gap:10px;
+        width:100%;
 
     }
 
-    .toolbar button{
+    button{
 
         flex:1 1 45%;
-
-        min-width:130px;
 
     }
 
