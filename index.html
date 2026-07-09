@@ -1,82 +1,21 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Avatar Kỷ Niệm</title>
-
-    <!-- Cropper CSS -->
-    <link rel="stylesheet"
-          href="https://unpkg.com/cropperjs/dist/cropper.min.css">
-
-    <link rel="stylesheet"
-          href="css/style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Avatar Kỷ Niệm</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-<div class="container">
-
-    <div class="header">
-
-        <h1>🎉 Avatar Kỷ Niệm</h1>
-
-        <p>
-            Chọn ảnh để tạo ảnh đại diện
-        </p>
-
-    </div>
-
-    <div class="preview">
-
-        <img id="previewImage">
-
-        <div id="placeholder">
-
-            📷
-
-            <br><br>
-
-            Chưa có ảnh
-
-        </div>
-
-    </div>
-
-    <input
-        type="file"
-        id="fileInput"
-        accept="image/*"
-        hidden>
-
-    <div class="buttons">
-
-        <button id="chooseBtn">
-
-            📷 Chọn ảnh
-
-        </button>
-
-        <button id="resetBtn">
-
-            ♻ Đặt lại
-
-        </button>
-
-    </div>
-
+<div class="card">
+<h1>Avatar Kỷ Niệm</h1>
+<p>Phiên bản khởi đầu</p>
+<div class="preview"><img id="img"><span id="ph">Chưa chọn ảnh</span></div>
+<input id="file" type="file" accept="image/*" hidden>
+<div class="toolbar">
+<button id="pick">📷 Chọn ảnh</button>
+<button id="download" disabled>💾 Tải ảnh (sắp có)</button>
 </div>
-
-<script src="https://unpkg.com/cropperjs/dist/cropper.min.js"></script>
-
+</div>
 <script src="js/script.js"></script>
-
-</body>
-
-</html>
+</body></html>
