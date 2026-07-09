@@ -6,9 +6,11 @@
 
 body{
 
-    background:#f5f5f5;
-
     font-family:Arial, Helvetica, sans-serif;
+
+    background:#f2f5f8;
+
+    min-height:100vh;
 
     display:flex;
 
@@ -16,39 +18,43 @@ body{
 
     align-items:center;
 
-    min-height:100vh;
-
 }
 
 .container{
 
-    width:460px;
+    width:430px;
 
-    background:white;
-
-    padding:40px;
+    background:#fff;
 
     border-radius:20px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.header{
 
     text-align:center;
 
+    margin-bottom:25px;
+
 }
 
-h1{
+.header h1{
 
     color:#b10000;
 
+    font-size:32px;
+
 }
 
-.sub{
+.header p{
 
     color:#666;
 
-    margin-top:10px;
-
-    margin-bottom:30px;
+    margin-top:8px;
 
 }
 
@@ -58,13 +64,17 @@ h1{
 
     height:300px;
 
+    margin:auto;
+
     border-radius:50%;
 
     overflow:hidden;
 
-    border:4px dashed #cccccc;
+    position:relative;
 
-    margin:auto;
+    border:4px dashed #c8c8c8;
+
+    background:#fafafa;
 
     display:flex;
 
@@ -72,13 +82,11 @@ h1{
 
     align-items:center;
 
-    background:#fafafa;
-
-    position:relative;
-
 }
 
 .preview img{
+
+    display:none;
 
     width:100%;
 
@@ -86,21 +94,33 @@ h1{
 
     object-fit:cover;
 
-    display:none;
-
 }
 
 #placeholder{
 
     color:#888;
 
+    font-size:22px;
+
+    text-align:center;
+
+    line-height:1.6;
+
 }
 
-button{
+.buttons{
 
     margin-top:30px;
 
-    width:100%;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+button{
 
     padding:15px;
 
@@ -108,18 +128,58 @@ button{
 
     border-radius:12px;
 
-    background:#008f39;
+    cursor:pointer;
 
     color:white;
 
     font-size:18px;
 
-    cursor:pointer;
+    transition:.2s;
 
 }
 
-button:hover{
+#chooseBtn{
 
-    background:#00752f;
+    background:#009944;
+
+}
+
+#chooseBtn:hover{
+
+    background:#007c37;
+
+}
+
+#resetBtn{
+
+    background:#d9534f;
+
+}
+
+#resetBtn:hover{
+
+    background:#c9302c;
+
+}
+
+/* Cropper */
+
+.cropper-view-box{
+
+    border-radius:50%;
+
+}
+
+.cropper-face{
+
+    border-radius:50%;
+
+}
+
+.cropper-center,
+.cropper-line,
+.cropper-point{
+
+    display:none!important;
 
 }

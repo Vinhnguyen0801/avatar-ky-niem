@@ -2,30 +2,50 @@
 <html lang="vi">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Avatar Kỷ Niệm</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Cropper CSS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/cropperjs/dist/cropper.min.css">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <h1>🎉 Avatar Kỷ Niệm</h1>
+    <div class="header">
 
-    <p class="sub">
-        Chọn ảnh để tạo ảnh đại diện
-    </p>
+        <h1>🎉 Avatar Kỷ Niệm</h1>
+
+        <p>
+            Chọn ảnh để tạo ảnh đại diện
+        </p>
+
+    </div>
 
     <div class="preview">
 
         <img id="previewImage">
 
-        <span id="placeholder">
-            Chưa chọn ảnh
-        </span>
+        <div id="placeholder">
+
+            📷
+
+            <br><br>
+
+            Chưa có ảnh
+
+        </div>
 
     </div>
 
@@ -35,13 +55,25 @@
         accept="image/*"
         hidden>
 
-    <button id="chooseBtn">
+    <div class="buttons">
 
-        📷 Chọn ảnh
+        <button id="chooseBtn">
 
-    </button>
+            📷 Chọn ảnh
+
+        </button>
+
+        <button id="resetBtn">
+
+            ♻ Đặt lại
+
+        </button>
+
+    </div>
 
 </div>
+
+<script src="https://unpkg.com/cropperjs/dist/cropper.min.js"></script>
 
 <script src="js/script.js"></script>
 
