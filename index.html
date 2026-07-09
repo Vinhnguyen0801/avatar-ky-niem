@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Avatar Kỷ Niệm</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -12,29 +11,39 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>🎉 Avatar Kỷ Niệm</h1>
+    <h1>🎉 Avatar Kỷ Niệm</h1>
 
-        <p class="sub">
-            Chọn ảnh của bạn để tạo ảnh đại diện
-        </p>
+    <p class="sub">
+        Chọn ảnh để tạo ảnh đại diện
+    </p>
 
-        <div class="preview">
+    <div class="preview">
 
-            Khu vực xem trước
+        <img id="previewImage">
 
-        </div>
-
-        <button>
-
-            Chọn ảnh
-
-        </button>
+        <span id="placeholder">
+            Chưa chọn ảnh
+        </span>
 
     </div>
 
-    <script src="js/script.js"></script>
+    <input
+        type="file"
+        id="fileInput"
+        accept="image/*"
+        hidden>
+
+    <button id="chooseBtn">
+
+        📷 Chọn ảnh
+
+    </button>
+
+</div>
+
+<script src="js/script.js"></script>
 
 </body>
 
