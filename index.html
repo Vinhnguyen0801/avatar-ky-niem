@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Agribank Avatar Builder</title>
 
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <header>
+    <header class="header">
 
-        <img src="assets/logo.png" id="logo">
+        <img src="assets/logo.png" class="logo" alt="Logo">
 
-        <h1>AVATAR BUILDER</h1>
+        <h1>Avatar Builder</h1>
 
         <p>Kỷ niệm 8 năm Agribank Hà Tĩnh II</p>
 
     </header>
 
-    <div class="canvas-area">
+    <main>
 
-        <canvas id="canvas" width="2048" height="2048"></canvas>
+        <div class="canvas-container">
 
-    </div>
+            <canvas id="canvas" width="2048" height="2048"></canvas>
 
-    <div class="toolbar">
+        </div>
 
-        <button id="uploadBtn">📷 Chọn ảnh</button>
+    </main>
 
-        <button id="zoomInBtn">＋</button>
+    <footer>
 
-        <button id="zoomOutBtn">－</button>
+        <button id="btnUpload">📷 Chọn ảnh</button>
 
-        <button id="rotateLeftBtn">↺</button>
+        <button id="btnZoomIn">＋</button>
 
-        <button id="rotateRightBtn">↻</button>
+        <button id="btnZoomOut">－</button>
 
-        <button id="resetBtn">♻</button>
+        <button id="btnRotateLeft">↺</button>
 
-        <button id="downloadBtn">💾</button>
+        <button id="btnRotateRight">↻</button>
 
-    </div>
+        <button id="btnReset">♻</button>
+
+        <button id="btnDownload">💾</button>
+
+    </footer>
 
 </div>
 
 <input
-type="file"
-id="imageInput"
-accept="image/*"
-hidden>
+    id="imageInput"
+    type="file"
+    accept="image/*"
+    hidden>
 
-<script src="js/canvas.js"></script>
-<script src="js/image.js"></script>
-<script src="js/toolbar.js"></script>
-<script src="js/download.js"></script>
 <script src="js/app.js"></script>
 
 </body>
+
 </html>
