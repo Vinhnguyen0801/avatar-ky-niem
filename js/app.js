@@ -250,7 +250,7 @@ document.getElementById("btnDownload").onclick = function () {
 
         quality: 1,
 
-        multiplier: 1
+        multiplier: 4
 
     });
 
