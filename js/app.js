@@ -43,8 +43,8 @@ fabric.Image.fromURL(
         frameImage.scaleToWidth(canvas.width);
         frameImage.scaleToHeight(canvas.height);
 
-        canvas.add(frameImage);
-        frameImage.moveTo(999);
+        //canvas.add(frameImage);
+        //frameImage.moveTo(999);
 
         canvas.renderAll();
 
