@@ -91,8 +91,8 @@ imageInput.onchange = function (e) {
                 originX: "center",
                 originY: "center",
 
-                left: 1024,
-                top: 1024,
+                left: canvas.width / 2,
+                top: canvas.height / 2,
 
                 cornerStyle: "circle",
                 cornerColor: "#009640",
@@ -102,7 +102,7 @@ imageInput.onchange = function (e) {
 
             });
 
-            userImage.scaleToWidth(1200);
+            userImage.scaleToWidth(canvas.width * 0.8);
 
             canvas.insertAt(userImage, 0);
 
@@ -209,9 +209,9 @@ document.getElementById("btnReset").onclick = function () {
 
     userImage.set({
 
-        left: 1024,
+        left: canvas.width / 2,
 
-        top: 1024,
+        top: canvas.height / 2,
 
         angle: 0,
 
