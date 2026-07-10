@@ -60,70 +60,68 @@ fabric.Image.fromURL(
 
 const imageInput = document.getElementById("imageInput");
 
-document.getElementById("btnUpload").onclick = function () {
-
+document.getElementById("btnUpload").onclick = () => {
     imageInput.click();
-
 };
 
 imageInput.onchange = function (e) {
 
     const file = e.target.files[0];
-
     if (!file) return;
 
     const reader = new FileReader();
 
     reader.onload = function (event) {
 
-        fabric.Image.fromURL(event.target.result, function (img) {
+        fabric.Image.fromURL(
+            event.target.result,
+            function (img) {
 
-            if (userImage) {
+                if (userImage) {
+                    canvas.remove(userImage);
+                }
 
-                canvas.remove(userImage);
+                userImage = img;
 
+                const maxSize = canvas.width * 0.8;
+
+                if (img.width > img.height) {
+                    img.scaleToWidth(maxSize);
+                } else {
+                    img.scaleToHeight(maxSize);
+                }
+
+                img.set({
+                    left: canvas.width / 2,
+                    top: canvas.height / 2,
+                    originX: "center",
+                    originY: "center",
+
+                    selectable: true,
+                    evented: true,
+
+                    cornerStyle: "circle",
+                    cornerColor: "#009640",
+                    borderColor: "#009640",
+                    transparentCorners: false
+                });
+
+                canvas.add(img);
+
+                if (frameImage) {
+                    frameImage.bringToFront();
+                }
+
+                canvas.setActiveObject(img);
+                canvas.requestRenderAll();
+            },
+            {
+                crossOrigin: "anonymous"
             }
-
-            userImage = img;
-
-            userImage.set({
-
-                originX: "center",
-                originY: "center",
-
-                left: canvas.width / 2,
-                top: canvas.height / 2,
-
-                cornerStyle: "circle",
-                cornerColor: "#009640",
-                borderColor: "#009640",
-
-                transparentCorners: false
-
-            });
-
-            userImage.scaleToWidth(canvas.width * 0.8);
-
-            canvas.add(userImage);
-
-            userImage.setCoords();
-
-            if (frameImage) {
-
-                frameImage.moveTo(999);
-
-            }
-
-            canvas.setActiveObject(userImage);
-
-            canvas.renderAll();
-
-        });
-
+        );
     };
 
     reader.readAsDataURL(file);
-
 };
 // ===============================
 // ZOOM
