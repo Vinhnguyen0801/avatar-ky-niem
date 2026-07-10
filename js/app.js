@@ -13,6 +13,9 @@ canvas.setDimensions({
     width: workspace.clientWidth,
     height: workspace.clientHeight
 });
+
+console.log("INIT:", canvas.width, canvas.height);
+
 canvas.backgroundColor = "#ffffff";
 canvas.renderAll();
 
