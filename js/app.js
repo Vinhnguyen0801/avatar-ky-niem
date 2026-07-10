@@ -106,6 +106,8 @@ imageInput.onchange = function (e) {
 
             canvas.insertAt(userImage, 0);
 
+            userImage.setCoords();
+
             if (frameImage) {
 
                 frameImage.moveTo(999);
