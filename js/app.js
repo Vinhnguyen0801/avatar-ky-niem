@@ -7,9 +7,11 @@ const canvas = new fabric.Canvas("canvas", {
     selection: false
 });
 
+const workspace = document.querySelector(".workspace");
+
 canvas.setDimensions({
-    width:2048,
-    height:2048
+    width: workspace.clientWidth,
+    height: workspace.clientHeight
 });
 canvas.backgroundColor = "#ffffff";
 canvas.renderAll();
@@ -35,8 +37,8 @@ fabric.Image.fromURL(
             hoverCursor: "default"
         });
 
-        frameImage.scaleToWidth(2048);
-        frameImage.scaleToHeight(2048);
+        frameImage.scaleToWidth(canvas.width);
+        frameImage.scaleToHeight(canvas.height);
 
         canvas.add(frameImage);
         frameImage.moveTo(999);
