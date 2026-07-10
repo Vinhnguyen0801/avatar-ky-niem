@@ -76,14 +76,13 @@ body{
 
 }
 
-canvas{
-
+.canvas-container{
     width:100% !important;
-
     height:100% !important;
+}
 
+.canvas-container canvas{
     display:block;
-
 }
 
 .toolbar{
