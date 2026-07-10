@@ -104,7 +104,7 @@ imageInput.onchange = function (e) {
 
             userImage.scaleToWidth(canvas.width * 0.8);
 
-            canvas.insertAt(userImage, 0);
+            canvas.add(userImage);
 
             userImage.setCoords();
 
