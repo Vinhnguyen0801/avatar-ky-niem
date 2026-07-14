@@ -133,6 +133,14 @@ body{
 
 }
 
+#btnUpload{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
 .toolbar button:hover{
 
     background:#007b33;
