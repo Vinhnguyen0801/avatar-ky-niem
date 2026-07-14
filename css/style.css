@@ -169,6 +169,16 @@ body{
 
 }
 
+#btnZoomOut{
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:14px;
+
+}
+
 .toolbar button:hover{
 
     background:#007b33;
