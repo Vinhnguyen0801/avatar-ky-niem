@@ -50,23 +50,25 @@ body{
 
     color:#b00000;
 
-    font-size:30px;
+    font-size:26px;
 
     font-weight:700;
 
-    margin-bottom:12px;
+    margin-bottom:6px;
 
 }
 
 .header-subtitle{
 
-    color:#555;
+    color:#B8860B;
 
-    font-size:20px;
+    font-size:18px;
 
     font-weight:500;
 
-    margin-bottom:10px;
+    letter-spacing:0.5px;
+
+    margin-bottom:24px;
 
 }
 
