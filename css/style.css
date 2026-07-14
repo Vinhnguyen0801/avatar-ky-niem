@@ -46,19 +46,27 @@ body{
 
 }
 
-.header h1{
+.header-title{
 
     color:#b00000;
 
-    font-size:36px;
+    font-size:30px;
 
-    margin-bottom:8px;
+    font-weight:700;
+
+    margin-bottom:12px;
 
 }
 
-.header p{
+.header-subtitle{
 
-    color:#666;
+    color:#555;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    margin-bottom:10px;
 
 }
 
