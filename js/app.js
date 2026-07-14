@@ -207,29 +207,14 @@ document.getElementById("btnReset").onclick = function () {
 
     if (!userImage) return;
 
-    userImage.set({
+    canvas.remove(userImage);
+    userImage = null;
 
-        left: canvas.width / 2,
-
-        top: canvas.height / 2,
-
-        angle: 0,
-
-        scaleX: 1,
-
-        scaleY: 1,
-
-        originX: "center",
-
-        originY: "center"
-
-    });
-
-    canvas.setActiveObject(userImage);
-
-    canvas.renderAll();
+    document.getElementById("imageInput").value = "";
+    document.getElementById("imageInput").click();
 
 };
+
 // ===============================
 // DOWNLOAD
 // ===============================
