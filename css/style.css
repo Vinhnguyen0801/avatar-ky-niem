@@ -34,11 +34,15 @@ body{
 
 }
 
-#logo{
+.header-logo{
 
-    width:90px;
+    width:340px;
 
-    margin-bottom:10px;
+    max-width:90%;
+
+    height:auto;
+
+    margin-bottom:20px;
 
 }
 
