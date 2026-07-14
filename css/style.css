@@ -168,9 +168,9 @@ body{
 
 #btnZoomIn{
 
-    width:56px;
+    width:64px;
 
-    height:56px;
+    height:64px;
 
     border-radius:14px;
 
@@ -178,9 +178,9 @@ body{
 
 #btnZoomOut{
 
-    width:56px;
+    width:64px;
 
-    height:56px;
+    height:64px;
 
     border-radius:14px;
 
@@ -188,9 +188,9 @@ body{
 
 #btnRotateLeft{
 
-    width:56px;
+    width:64px;
 
-    height:56px;
+    height:64px;
 
     border-radius:14px;
 
@@ -198,9 +198,9 @@ body{
 
 #btnRotateRight{
 
-    width:56px;
+    width:64px;
 
-    height:56px;
+    height:64px;
 
     border-radius:14px;
 
